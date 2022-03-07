@@ -25,19 +25,17 @@ q=Queue()
 def main():
     global result_path
     global result_embarrassment
-    end=int(input('终点的编号，哦：'))
-    path=int(input('节点之间一共有多少条路径，哦：'))
+    end=int(input('终点节点的编号：'))
+    path=int(input('节点之间一共有多少条路径：'))
     for i in range(path):
-        print('现在我们正在处理第',i+1,'条路径，哦',sep='')
-        node_1=int(input('这条路的一端的节点的编号，哦：'))
-        node_2=int(input('这条路的另一端的节点的编号，哦：'))
-        people=int(input('这条路上有多少人，哦：'))
+        print('现在我们正在处理第',i+1,'条路径',sep='')
+        node_1=int(input('这条路的一端的节点的编号：'))
+        node_2=int(input('这条路的另一端的节点的编号：'))
+        people=int(input('这条路上有多少人：'))
         graph[node_1][node_2]=True
         graph[node_2][node_1]=True
         graph_1[node_1][node_2]=people
         graph_1[node_2][node_2]=people
-        if people==0:
-            print('哇，这条路上竟然没有人呢，棒死了')
         print('-------------------------------------------')
     start=Node()
     start.id_number=1
@@ -74,6 +72,6 @@ def main():
         for i in possibility:
             q.push(i)
         q.pop()
-    print('哇，社死值最小的路径是',result_path,'呢，社死值是',result_embarrassment)
+    print('社死值最小的路径是',result_path,'，社死值是',result_embarrassment)
     
 main()
