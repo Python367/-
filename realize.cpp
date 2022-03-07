@@ -32,16 +32,13 @@ int paths;
 int main(){
     memset(graph,0,sizeof(graph));
     memset(graph_1,0,sizeof(graph_1));
-    paths=input("节点之间一共有多少条路径，哦：");
-    destination=input("输入目的地，哦：");
+    paths=input("节点之间一共有多少条路径：");
+    destination=input("输入目的地：");
     for(int i=0;i<paths;i++){
-        cout<<"我们现在正在处理第"<<i+1<<"条路径，哦"<<endl;
-        node_1=input("这条路的一端的节点的编号，哦：");
-        node_2=input("这条路的另一端的节点的编号，哦：");
-        people=input("这条路上有多少人，哦：");
-        if(people==0){
-            cout<<"哇棒死了呢，这条路上竟然没有人呢"<<endl;
-        }
+        cout<<"我们现在正在处理第"<<i+1<<"条路径"<<endl;
+        node_1=input("这条路的一端的节点的编号：");
+        node_2=input("这条路的另一端的节点的编号：");
+        people=input("这条路上有多少人：");
         graph[node_1][node_2]=graph[node_2][node_1]=1;
         graph_1[node_1][node_2]=graph_1[node_2][node_1]=people;
         cout<<"--------------------------------------------------"<<endl;
@@ -100,6 +97,6 @@ int main(){
         }
         q.pop();
     }
-    cout<<"哇，社死值最小的路径是"<<result_path<<"呢"<<endl;
+    cout<<"社死值最小的路径是"<<result_path<<endl;
     return 0;
 }
